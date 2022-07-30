@@ -58,4 +58,11 @@ public class JoinReqDto {
 
 	}
 
+//	@Override
+//	public String toString() {
+//
+//		return "JoinReqDto [username=" + username + ", password=" + password + ", email=" + email + ", address=" + address + "]";
+//
+//	}
+
 }
