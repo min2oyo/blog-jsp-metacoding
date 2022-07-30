@@ -11,7 +11,7 @@ public class UserDao {
 	// 회원가입
 	public int save(JoinReqDto dto) {
 
-		String sql = "insert into user (username, password, email, address, userRole, createDate) values (?, ?, ?, ?, 'USER', now()";
+		String sql = "insert into user (username, password, email, address, userRole, createDate) values (?, ?, ?, ?, 'USER', now())";
 		Connection conn = DB.getConnection();
 		PreparedStatement pstmt = null;
 
@@ -23,6 +23,8 @@ public class UserDao {
 			pstmt.setString(2, dto.getPassword());
 			pstmt.setString(3, dto.getEmail());
 			pstmt.setString(4, dto.getAddress());
+
+			System.out.println("pstmt: " + pstmt);
 
 			int result = pstmt.executeUpdate();
 			return result;

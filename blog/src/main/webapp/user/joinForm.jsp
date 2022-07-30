@@ -17,8 +17,12 @@
 			<input type="email" class="form-control" name="email" placeholder="Enter Email" required />
 		</div>
 
+		<div class="d-flex justify-content-end">
+			<button type="button" class="btn btn-info" onClick="goPopup();">주소 검색</button>
+		</div>
+
 		<div class="form-group">
-			<input type="text" class="form-control" name="address" placeholder="Enter Address" required />
+			<input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" readonly required />
 		</div>
 
 		<button type="submit" class="btn btn-primary">회원가입 완료</button>
@@ -26,5 +30,17 @@
 	</form>
 </div>
 
+<script>
+
+	function goPopup() {
+		var pop = window.open("/blog/user/jusoPopup.jsp", "pop", "width=570,height=420, scrollbars=yes, resizable=yes");
+	}
+
+	function jusoCallBack(roadFullAddr) {
+		var addressEl = document.querySelector("#address");
+		addressEl.value = roadFullAddr;
+	}
+	
+</script>
 </body>
 </html>

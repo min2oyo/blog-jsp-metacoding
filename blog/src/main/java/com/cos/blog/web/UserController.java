@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cos.blog.domain.user.dto.JoinReqDto;
 import com.cos.blog.domain.user.dto.LoginReqDto;
 import com.cos.blog.service.UserService;
+import com.cos.blog.util.Script;
 
 @WebServlet("/user")
 public class UserController extends HttpServlet {
@@ -75,7 +76,7 @@ public class UserController extends HttpServlet {
 
 			dto.setUsername(username);
 			dto.setPassword(password);
-			dto.setPassword(email);
+			dto.setEmail(email);
 			dto.setAddress(address);
 
 			System.out.println("회원가입: " + dto);
@@ -87,7 +88,7 @@ public class UserController extends HttpServlet {
 
 			} else {
 
-				// Script.back();
+				Script.back(response, "회원가입 실패");
 
 			}
 
