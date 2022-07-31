@@ -24,8 +24,6 @@ public class UserDao {
 			pstmt.setString(3, dto.getEmail());
 			pstmt.setString(4, dto.getAddress());
 
-			System.out.println("pstmt: " + pstmt);
-
 			int result = pstmt.executeUpdate();
 			return result;
 

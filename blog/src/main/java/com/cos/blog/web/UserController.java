@@ -79,7 +79,6 @@ public class UserController extends HttpServlet {
 			dto.setEmail(email);
 			dto.setAddress(address);
 
-			System.out.println("회원가입: " + dto);
 			int result = userService.회원가입(dto);
 
 			if (result == 1) {
